@@ -1,76 +1,47 @@
-CREATE TABLE USERS(
-    id SERIAL 
-        PRIMARY KEY,
-    user_name varchar(255) 
-        NOT NULL
-);
+-- CREATE TYPE like_action AS ENUM ('like', 'dislike');
+-- CREATE TYPE like_type AS ENUM ('post', 'comment');
 
-CREATE TABLE POSTS (
-    id SERIAL 
-        PRIMARY KEY,
-    title varchar(255) 
-        NOT NULL,
-    by_user Integer REFERENCES USERS 
-        ON DELETE CASCADE
-        NOT NULL
-);
+-- DROP TYPE like_action;
+-- DROP TYPE like_type;
+;
 
-CREATE TABLE COMMENTS_ON_POST (
-    id SERIAL PRIMARY KEY,
-    comment varchar(1000),
-    ref Integer REFERENCES POSTS 
-        ON DELETE CASCADE
-        NOT NULL,
-    by_user Integer REFERENCES USERS 
-        ON DELETE CASCADE
-        NOT NULL
-);
+-- CREATE TABLE users(
+--     id SERIAL PRIMARY KEY,
+--     u_name varchar(500) NOT NULL
+-- );
 
-CREATE TABLE LIKES_ON_POST (
-    id SERIAL PRIMARY KEY,
-    like_dislike boolean 
-        NOT NULL,
-    ref Integer REFERENCES POSTS
-        ON DELETE CASCADE
-        NOT NULL,
-    by_user Integer REFERENCES USERS 
-        ON DELETE CASCADE
-        NOT NULL
-);
+-- CREATE TABLE post (
+--     id SERIAL 
+--         PRIMARY KEY,
+--     info varchar(255) 
+--         NOT NULL,
+--     user_id Integer REFERENCES users 
+--         ON DELETE CASCADE
+--         NOT NULL,
+--     likes Integer,
+--     dislikes Integer
+-- );
 
-CREATE TABLE COMMENTS_ON_COMMENT (
-    id SERIAL PRIMARY KEY,
-    comment varchar(1000),
-    ref Integer REFERENCES COMMENTS_ON_POST
-        ON DELETE CASCADE
-        NOT NULL,
-    by_user Integer REFERENCES USERS 
-        ON DELETE CASCADE
-        NOT NULL
-);
+-- CREATE TABLE comment (
+--     id SERIAL PRIMARY KEY,
+--     comment varchar(1000),
+--     post_id Integer REFERENCES post 
+--         ON DELETE CASCADE,
+--     user_id Integer REFERENCES users
+--         ON DELETE CASCADE
+--         NOT NULL,
+--     comment_id Integer REFERENCES comment
+--         ON DELETE CASCADE
+-- );
 
-CREATE TABLE LIKES_ON_COMMENT (
-    id SERIAL PRIMARY KEY,
-    like_dislike boolean 
-        NOT NULL,
-    ref Integer REFERENCES COMMENTS
-        ON DELETE CASCADE
-        NOT NULL,
-    by_user Integer REFERENCES USERS 
-        ON DELETE CASCADE
-        NOT NULL
-);
-
-CREATE TABLE LIKES_ON_COMMENT_OF_COMMENTS (
-    id SERIAL PRIMARY KEY,
-    like_dislike boolean 
-        NOT NULL,
-    ref Integer REFERENCES COMMENTS_ON_COMMENT
-        ON DELETE CASCADE
-        NOT NULL,
-    by_user Integer REFERENCES USERS 
-        ON DELETE CASCADE
-        NOT NULL
-);
+-- CREATE TABLE likes (
+--     id SERIAL PRIMARY KEY, 
+--     operation like_action,
+--     user_id Integer REFERENCES users
+--         ON DELETE CASCADE
+--         NOT NULL,
+--     post_id Integer REFERENCES post,
+--     comment_id Integer REFERENCES comment
+-- );
 
 

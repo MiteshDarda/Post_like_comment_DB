@@ -1,4 +1,4 @@
-INSERT INTO USERS(user_name)
+INSERT INTO USERS(u_name)
 VALUES 
     ('Hero'),
     ('Akshay'),
