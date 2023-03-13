@@ -1,6 +1,6 @@
 -- SELECT * FROM users;
--- SELECT * FROM post;
--- SELECT * FROM comment;
+-- SELECT * FROM post ORDER BY id ASC;
+-- SELECT * FROM comment post ORDER BY id ASC;
 -- SELECT * FROM likes;
 
 
@@ -49,3 +49,7 @@
 
 -- SELECT * FROM final_table
 
+
+-- Q 4. Likes on post
+
+-- SELECT 

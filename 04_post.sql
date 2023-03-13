@@ -1,7 +1,7 @@
-INSERT INTO post(info, user_id, likes, dislikes)
-VALUES('SELFI', 1, 0, 0),
-    ('HOLI KA TUFAN', 2, 0, 0),
-    ('DAWALI PAR DHAMAKA SALE', 1, 0, 0),
-    ('Funny video', 3, 0, 0),
-    ('cute cats', 4, 0, 0),
-    ('dogs fighting', 1, 0, 0);
+INSERT INTO post(info, user_id)
+VALUES('SELFI', 1),
+    ('HOLI KA TUFAN', 2),
+    ('DAWALI PAR DHAMAKA SALE', 1),
+    ('Funny video', 3),
+    ('cute cats', 4),
+    ('dogs fighting', 1);
